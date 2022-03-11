@@ -11,27 +11,18 @@ const validNumber = []; //creao array vuoto
 
 //utlizzo il while
 
-while(validNumber.lenght < 6) {
 
-
-    //chiedo numero all'utente finché la lunghezza dell'array è 6
-    const numberUtente = parseInt(prompt('Inserisci un numero'));
-
-
-    //se l'input è un numero
-    if(!isNaN(numberUtente)) {
-        validNumber.push(numberUtente);
-        //se questo numero è divisibile per 2
-        if (numberUtente % 2 === 0);
-
-        // lo stampo
-        console.log('il numero è pari');
-        
-        //altrimenti lo inserisco nell'array
-        } else {
-        numberUtente.push(numberUtente); 
+for(let i=0; i < 6; i++) {
+    let nuovoNumero; // variabile vuota
+    while(isNaN(nuovoNumero)) { //finché quello che hai inserito non è un numero
+        nuovoNumero = parseInt(prompt(`${i+1} 'Inserisci un numero'`)); //continuo a chiedere all'utente un numero
     }
+
+    if(nuovoNumero % 2 !== 0) {
+        validNumber.push(nuovoNumero);
+    }
+
 }
 
-//ho un array con 6 numeri
-
+//stampo il mio array
+console.log('I numeri dispari sono: ' + validNumber);
